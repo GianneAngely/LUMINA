@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LUMINA Design System - Ethical AI Auditing Platform */
+
+@layer base {
+  :root {
+    /* Primary Colors - LUMINA Brand */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 0 0% 12%; /* #1F1F1F */
+    
+    --primary: 180 100% 27%; /* #008C8C - Teal */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 174 73% 81%; /* #B0F0E6 - Mint */
+    --secondary-foreground: 0 0% 12%;
+    
+    --accent: 46 93% 48%; /* #E7B10A - Gold */
+    --accent-foreground: 0 0% 12%;
+    
+    /* Text Colors */
+    --text-primary: 0 0% 12%; /* #1F1F1F */
+    --text-secondary: 0 0% 31%; /* #4F4F4F */
+    --text-muted: 0 0% 54%; /* #8A8A8A */
+    
+    /* Semantic Colors */
+    --success: 164 66% 33%; /* #1F8A70 */
+    --warning: 46 85% 63%; /* #F2C94C */
+    --destructive: 355 75% 55%; /* #E63946 */
+    
+    --border: 0 0% 90%; /* #E5E5E5 */
+    --input: 0 0% 90%;
+    --ring: 180 100% 27%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 54%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+    
+    --radius: 0.75rem; /* 12px */
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-modal: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  h1 {
+    @apply text-xl md:text-2xl lg:text-4xl font-semibold;
+  }
+  
+  h2 {
+    @apply text-lg md:text-xl lg:text-2xl font-medium;
+  }
+  
+  h3 {
+    @apply text-base md:text-lg lg:text-xl font-medium;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .shadow-modal {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Responsive Container Padding */
+  .container-padding {
+    @apply px-6 md:px-12 lg:px-20;
+  }
+  
+  /* Safe Content Zones */
+  .safe-zone {
+    @apply px-6 md:px-12 lg:px-20;
+  }
+  
+  /* Responsive Card Grid */
+  .responsive-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6;
+  }
+  
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6;
+  }
+  
+  .responsive-grid-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6;
+  }
+  
+  /* Touch-Friendly Buttons */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Responsive Typography */
+  .text-responsive-h1 {
+    @apply text-xl md:text-2xl lg:text-4xl;
+  }
+  
+  .text-responsive-h2 {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  
+  .text-responsive-body {
+    @apply text-sm md:text-base;
+  }
+}
