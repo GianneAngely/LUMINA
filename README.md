@@ -1,73 +1,39 @@
-# Welcome to your Lovable project
+# LUMINA — Ethical AI Auditing Platform
 
-## Project info
+A dashboard concept for AI-assisted auditing that keeps the automation itself accountable: smart, ethical, and transparent. LUMINA surfaces anomalies, scores trust, and watches for suspicious patterns — and for every flag it shows the evidence and a plain-language explanation of *why*.
 
-**URL**: https://lovable.dev/projects/94e5f5b0-0a1e-4856-a387-4a85f1a8ba06
+![LUMINA dashboard](screenshot.png)
 
-## How can I edit this code?
+## Overview
 
-There are several ways of editing your application.
+Automated auditing is only useful if people can trust and understand it. LUMINA is built around that idea: instead of a black box that just says "suspicious," every finding carries its evidence, a severity level, and a human-readable rationale. The result is an interface where an auditor can see what the system noticed, why it mattered, and what to do next.
 
-**Use Lovable**
+## Modules
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/94e5f5b0-0a1e-4856-a387-4a85f1a8ba06) and start prompting.
+- **Insight Board** — a real-time overview of transactions. Each flagged item lists how much evidence was found and an explanation of the decision.
+- **Integrity Vault** — tracks value changes (original → new) with timestamps and risk levels, catching drastic or anomalous edits.
+- **Silent Watch** — monitors for suspicious behavioural patterns, each with a severity rating and time window.
+- **Trust Profile** — computes a trust score per entity so reputation is visible at a glance.
+- **Secure Exchange** — a blockchain-hash-verified transaction flow that rejects tampered or high-risk transactions.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech stack
 
-**Use your preferred IDE**
+- React + Vite + TypeScript
+- Tailwind CSS + shadcn/ui
+- React Router
+- Responsive, mobile-through-desktop layout with a clean, dashboard-first design system
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Run locally
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone https://github.com/GianneAngely/LUMINA.git
+cd LUMINA
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Then open the printed local URL.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Note
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/94e5f5b0-0a1e-4856-a387-4a85f1a8ba06) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Concept prototype. All transactions, scores, and alerts are mock data used to demonstrate the interface and the "explainable audit" idea; there is no live backend or real model behind it.
