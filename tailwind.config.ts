@@ -56,8 +56,8 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['Montserrat', 'sans-serif'],
-        body: ['Poppins', 'sans-serif'],
+        heading: ['Sora', 'sans-serif'],
+        body: ['Hanken Grotesk', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
