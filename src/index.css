@@ -9,7 +9,7 @@
 @layer base {
   :root {
     /* Primary Colors - LUMINA Brand */
-    --background: 0 0% 100%; /* #FFFFFF */
+    --background: 185 30% 97.5%; /* subtle teal-tinted ground so white cards lift */
     --foreground: 0 0% 12%; /* #1F1F1F */
     
     --primary: 180 100% 27%; /* #008C8C - Teal */
@@ -46,9 +46,41 @@
     
     --radius: 0.75rem; /* 12px */
     
-    /* Shadows */
-    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
-    --shadow-modal: 0 4px 16px rgba(0, 0, 0, 0.12);
+    /* Shadows — layered teal-tinted ambient + soft key (offset + blur) */
+    --shadow-soft: 0 1px 2px rgba(15, 42, 42, 0.04), 0 6px 20px -6px rgba(15, 42, 42, 0.10);
+    --shadow-card-hover: 0 2px 4px rgba(15, 42, 42, 0.05), 0 16px 34px -10px rgba(15, 42, 42, 0.18);
+    --shadow-modal: 0 4px 16px rgba(15, 42, 42, 0.14);
+  }
+}
+
+@layer base {
+  /* Browser surfaces themed from the palette — selection, focus, scrollbar */
+  ::selection {
+    background: hsl(var(--primary) / 0.16);
+    color: hsl(var(--foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring) / 0.55);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.24);
+    border-radius: 999px;
+    border: 3px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.4);
   }
 }
 
@@ -81,11 +113,28 @@
 
 @layer utilities {
   .shadow-soft {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-soft);
   }
-  
+
   .shadow-modal {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-modal);
+  }
+
+  /* Tabular figures for metrics and currency so digits align */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Card lift interaction */
+  .card-lift {
+    transition: box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.25s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
   }
   
   /* Responsive Container Padding */
