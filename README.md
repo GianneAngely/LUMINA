@@ -2,6 +2,8 @@
 
 A dashboard concept for AI-assisted auditing that keeps the automation itself accountable: smart, ethical, and transparent. LUMINA surfaces anomalies, scores trust, and watches for suspicious patterns — and for every flag it shows the evidence and a plain-language explanation of *why*.
 
+**Live demo → [lumina-ai-auditing.vercel.app](https://lumina-ai-auditing.vercel.app)**
+
 ![LUMINA dashboard](screenshot.png)
 
 ## Overview
